@@ -5,6 +5,7 @@ module.exports = {
     description: `Software Engineer @ Algolia`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-theme-mdx-blog`,
     `gatsby-theme-mdx-tailwind-blog`,
     `gatsby-plugin-sharp`,
