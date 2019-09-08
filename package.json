@@ -1,0 +1,24 @@
+{
+  "name": "eunjae.dev",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eunjae Lee <karis612@gmail.com> (https://github.com/eunjae-lee)",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.15.2",
+    "gatsby-image": "^2.2.16",
+    "gatsby-plugin-sharp": "^2.2.19",
+    "gatsby-theme-mdx-blog": "0.0.3",
+    "gatsby-theme-mdx-tailwind-blog": "0.0.3",
+    "gatsby-transformer-sharp": "^2.2.13",
+    "prism-themes": "^1.1.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
