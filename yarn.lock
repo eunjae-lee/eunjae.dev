@@ -5370,6 +5370,13 @@ gatsby-page-utils@^0.0.21:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
+gatsby-plugin-google-analytics@^2.1.17:
+  version "2.1.17"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.17.tgz#aaa030ff063b356e9413cfcb4b30cfcc1910de3b"
+  integrity sha512-l+sqqHHLmbVx7XQOLTsPNQp3bKOwNcXANVOmFBumR3tBKrwS3oMfn0+/K/uzVESJ3oq2GRvKSMW6NWEoUtuo/Q==
+  dependencies:
+    "@babel/runtime" "^7.6.0"
+
 gatsby-plugin-mdx@^1.0.23:
   version "1.0.43"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.0.43.tgz#47faf866a175df1f6feb8804dba89ed0836a44d0"
@@ -5563,10 +5570,10 @@ gatsby-theme-mdx-blog@0.0.6:
     prop-types "^15.7.2"
     react-helmet "^5.2.1"
 
-gatsby-theme-mdx-tailwind-blog@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-mdx-tailwind-blog/-/gatsby-theme-mdx-tailwind-blog-0.0.8.tgz#4c9292812a1af33c099370cef7e8861f32b865ac"
-  integrity sha512-I+E+wGeQEKGophDcHBLrcB1Pf1HoHoTqJnQzPRO3+VbhXxs5f1fsxIOQ51PgQORWBJTJe5j84A+QMrNNkJqBsA==
+gatsby-theme-mdx-tailwind-blog@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-mdx-tailwind-blog/-/gatsby-theme-mdx-tailwind-blog-0.0.9.tgz#c045164defff21bb22101d5b06a84009d24b5f78"
+  integrity sha512-huodGwKqgMyPNfozVLBl0EiH7bdNYRh91LHc86MeWSazAmTr8F9mqZ/kRtVPrcwrHRbO/7/T2FhiwrvTGGQNkw==
   dependencies:
     autoprefixer "^9.6.1"
     gatsby-plugin-postcss "^2.1.5"
