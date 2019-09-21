@@ -59,7 +59,7 @@ module.exports = {
     },
     //...
   ],
-};
+}
 ```
 
 Create a file `gatsby-plugin-algolia-config.js`:
@@ -69,7 +69,7 @@ Create a file `gatsby-plugin-algolia-config.js`:
 
 require('dotenv').config({
   path: `.env`,
-});
+})
 
 const queries = [
   {
@@ -105,14 +105,14 @@ const queries = [
         })
       ),
   },
-];
+]
 
 module.exports = {
   appId: process.env.GATSBY_ALGOLIA_APP_ID,
   apiKey: process.env.GATSBY_ALGOLIA_ADMIN_API_KEY,
   indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
   queries,
-};
+}
 ```
 
 `dotenv` will pick up [environment variables](https://www.gatsbyjs.org/docs/environment-variables/) from your `.env` file during a build process. The names of the environment variables start with `GATSBY_` because they're also used at runtime in a browser.
@@ -144,7 +144,7 @@ It's time to attach a search UI to your frontend. Algolia provides [InstantSearc
 First, open `Layout.js` and import `SearchBox`.
 
 ```js
-import SearchBox from './SearchBox';
+import SearchBox from './SearchBox'
 ```
 
 Insert it before header or wherever you want.
@@ -161,26 +161,26 @@ Create a file `SearchBox.js`:
 ```js
 // src/components/SearchBox.js
 
-import React, { Component } from 'react';
-import { navigate } from 'gatsby';
-import './SearchBox.css';
+import React, { Component } from 'react'
+import { navigate } from 'gatsby'
+import './SearchBox.css'
 
-let algoliasearch, autocomplete, client, index;
+let algoliasearch, autocomplete, client, index
 
 if (typeof window !== 'undefined') {
-  algoliasearch = require('algoliasearch/lite');
-  autocomplete = require('autocomplete.js');
+  algoliasearch = require('algoliasearch/lite')
+  autocomplete = require('autocomplete.js')
   client = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_API_KEY
-  );
-  index = client.initIndex(process.env.GATSBY_ALGOLIA_INDEX_NAME);
+  )
+  index = client.initIndex(process.env.GATSBY_ALGOLIA_INDEX_NAME)
 }
 
 class SearchBox extends Component {
   componentDidMount() {
     if (typeof window === 'undefined') {
-      return;
+      return
     }
     autocomplete('#algolia-search-input', { hint: false }, [
       {
@@ -191,7 +191,7 @@ class SearchBox extends Component {
             return `
                 <p class="title">${title.value}</p>
                 <p class="description">${description.value}</p>
-                `;
+                `
           },
           footer:
             '<div class="branding">Powered by <img src="https://www.algolia.com/static_assets/images/press/downloads/algolia-logo-light.svg" /></div>',
@@ -203,8 +203,8 @@ class SearchBox extends Component {
       dataset,
       context
     ) {
-      navigate(suggestion.path);
-    });
+      navigate(suggestion.path)
+    })
   }
   render() {
     return (
@@ -218,11 +218,11 @@ class SearchBox extends Component {
           }}
         />
       </div>
-    );
+    )
   }
 }
 
-export default SearchBox;
+export default SearchBox
 ```
 
 Create a file `SearchBox.css`:

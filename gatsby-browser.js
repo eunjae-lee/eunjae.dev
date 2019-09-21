@@ -1,2 +1,1 @@
-import './src/css/highlight.scss';
-import './src/css/style.css';
+import 'prism-themes/themes/prism-darcula.css';
