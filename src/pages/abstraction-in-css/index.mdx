@@ -1,0 +1,41 @@
+---
+title: 'Abstraction in CSS'
+description: 'Is it even possible?'
+date: '2019-10-07T22:16:05.511Z'
+---
+
+Abstraction is always hard. You need to extract general concept and you also need to name it.
+
+Let's take an example. You're writing a function. It's too long and you've just realised it's actually doing two different things. Now you want to split it into two functions. It means you need to name the two functions. The names will exactly explain what they do. Even if you've decided to keep it in one function as is, you'll need to rename the function so that it will describe the two things it does.
+
+Now let's talk about how abstraction happens on class names in CSS.
+
+```html
+<button type="button" class="button">
+  Click Me
+</button>
+```
+
+Class name of elements mostly explains how they look like. It's because we bind the class name with specific styles.
+
+Then, how much should we abstract it?
+
+> **rounded-button-with-black-border-and-gray-bg**
+>
+> _vs_
+>
+> **button**
+
+It's very hard to choose proper granularity. Moreoever, both of them have problems. If you choose the former one, it looks like it contains all the information on how it looks like, but it doesn't or it won't. As soon as you add or remove some style regarding that selector in your CSS file, the name won't match the style. Then are you going to rename the class name to match the style? No, you won't. You can't. Okay, let's say you choose the latter one, the very abstract way. It barely contains what it looks like. You cannot guess its meaning out of the name.
+
+It's like you have a 1000-line function. You name it `handle`. The function is called from 10 other functions. Whenever you call `handle`, you don't exactly know what it's going to do. Whenever you modify `handle`, you have no idea how it will affect the 10 callers.
+
+Unlike functions or classes, the content of class name (styles) changes so frequently. Everytime you change some style, are you going to change the class name accordingly? It's impossible. Class name no longer can represent how your element looks like.
+
+Then we might need to consider not naming at all. Utility-first CSS frameworks or CSS-in-JS can be good alternatives. With them, you don't have to name anything but just write styles on elements, not having to wonder if adding and removing would break other pieces of the website.
+
+Of course, it doesn't mean you shouldn't name them at all. If you're building UI libraries or design system, it means the class names and their styles won't likely change much. In that case, abstraction makes sense. However, if you're building applications, styles will likely change over and over again. It'll so hard to maintain class names. I'm talking about that case.
+
+Some people will say that class names should be semantic and the class names from Utility-first CSS frameworks or CSS-in-js won't semantically mean anything. This is a whole another topic, which is out of the scope of this post.
+
+Abstraction in CSS is hard. Not naming at all seems to be a good alternative. That's one of the reasons why people are so excited about Utility-first CSS frameworks or CSS-in-JS. Let me know what you think.
