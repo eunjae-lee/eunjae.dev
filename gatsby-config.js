@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-theme-mdx-blog`,
     `gatsby-theme-mdx-tailwind-blog`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
