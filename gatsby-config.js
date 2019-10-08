@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-theme-mdx-blog`,
     `gatsby-theme-mdx-tailwind-blog`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
