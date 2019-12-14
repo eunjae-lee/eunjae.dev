@@ -5,6 +5,7 @@ module.exports = {
     title: `Eunjae Lee`,
     author: `Eunjae Lee`,
     description: `Software Engineer @ Algolia`,
+    siteUrl: `https://eunjae.dev`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -27,20 +28,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200,
+              maxWidth: 1200, // https://github.com/gatsbyjs/gatsby/issues/15486
             },
           },
-          {
-            resolve: `gatsby-remark-prismjs`,
-          },
+          { resolve: `gatsby-remark-prismjs` },
         ],
-        plugins: [`gatsby-remark-images`], // https://github.com/gatsbyjs/gatsby/issues/15486
-      },
-    },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/src/pages`, // load pages from this package (theme)
       },
     },
     {

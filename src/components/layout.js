@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-import { SEO } from 'gatsby-theme-mdx-blog';
+import SEO from './seo';
 import Post from './post';
 
 const withHeaderInfo = Comp => () => (
@@ -23,43 +23,6 @@ const withHeaderInfo = Comp => () => (
     }) => <Comp title={title} author={author} description={description} />}
   />
 );
-
-// const IndexHeader = () => (
-//   <StaticQuery
-//     query={graphql`
-//       query {
-//         site {
-//           siteMetadata {
-//             title
-//             author
-//             description
-//           }
-//         }
-//       }
-//     `}
-//     render={({
-//       site: {
-//         siteMetadata: { title, author, description },
-//       },
-//     }) => (
-//       <header>
-//         <h1 className={`pt-10 px-8 text-xl text-gray-800 font-bold`}>
-//           <Link to="/">{author}</Link>
-//         </h1>
-//         <div className="px-8 pb-4">
-//           <p className="text-base text-gray-700 font-light">
-//             {description}
-//             <span className="px-4 text-gray-500">|</span>
-//             <Link to="/about" className="text-blue-700 hover:text-blue-500">
-//               More
-//             </Link>
-//           </p>
-//         </div>
-//         <hr className="my-4 mx-8" />
-//       </header>
-//     )}
-//   />
-// );
 
 const IndexHeader = withHeaderInfo(({ author, description }) => (
   <header>

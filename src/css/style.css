@@ -16,7 +16,7 @@ article p > code.language-text::selection {
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: #2b2b2b;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 code[class*='language-'],
