@@ -1,0 +1,90 @@
+---
+title: 'Branching Strategies for Release'
+description: 'master vs. develop + master'
+date: '2019-12-17T00:06:03.027Z'
+---
+
+In git, it's important to choose an appropriate branching strategy for you.
+
+There are many aspects there but this post is going to be a small piece of information around release process.
+
+- If you use only `master` branch, what happens regarding release?
+- If you use `develop` and `master` branches, what happens regarding release?
+
+The following table compares the two cases. Choose what makes sense for your project.
+
+<table class="table-fixed">
+  <thead>
+    <tr>
+      <th class="border w-1/6 px-4 py-2"></th>
+      <th class="border w-1/3 px-4 py-2">
+        Same branch
+        <br />
+        <code class="language-text">master</code>
+      </th>
+      <th class="border w-1/3 px-4 py-2">
+        Release branch
+        <br />
+        <code class="language-text">develop + master</code>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border px-4 py-2 font-semibold">Unreleased Commit</td>
+      <td class="border px-4 py-2">
+        A PR merged is committed to <code class="language-text">master</code>{' '}
+        and user can see it.
+      </td>
+      <td class="border px-4 py-2">
+        A PR merged is committed to <code class="language-text">develop</code>{' '}
+        and user can see it, because it's the base branch.
+      </td>
+    </tr>
+    <tr class="bg-gray-100">
+      <td class="border px-4 py-2 font-semibold">README.md</td>
+      <td class="border px-4 py-2">
+        User will see the content regarding unreleased things(But it's okay
+        because we don't have much content on README.md).
+      </td>
+      <td class="border px-4 py-2">Same</td>
+    </tr>
+    <tr>
+      <td class="border px-4 py-2 font-semibold">Doc/Example Website</td>
+      <td class="border px-4 py-2">
+        User will see the examples regarding unreleased things(This is a
+        problem, but the effect can be minimized if release is frequent enough).
+      </td>
+      <td class="border px-4 py-2">
+        User will see the examples deployed from{' '}
+        <code class="language-text">master</code>, so no problem here.
+      </td>
+    </tr>
+    <tr>
+      <td class="border px-4 py-2 font-semibold">Other</td>
+      <td class="border px-4 py-2">
+        When managing many versions, branches are straightforward(
+        <code class="language-text">legacy</code>, <code class="language-text">
+          master
+        </code>, <code class="language-text">next</code>).
+      </td>
+      <td class="border px-4 py-2">
+        <ul>
+          <li>
+            We have <code class="language-text">master</code> as a snapshot of
+            lastly released version.
+          </li>
+          <li>
+            It can be confusing to manage many working branches and release
+            branches, for example, <code class="language-text">legacy</code>,{' '}
+            <code class="language-text">legacy_release</code>,{' '}
+            <code class="language-text">develop</code>,{' '}
+            <code class="language-text">master</code>,{' '}
+            <code class="language-text">next</code>,{' '}
+            <code class="language-text">next_release</code>.
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
