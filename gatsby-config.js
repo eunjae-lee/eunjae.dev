@@ -8,6 +8,13 @@ module.exports = {
     siteUrl: `https://eunjae.dev`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-emoji-favicon',
+      options: {
+        emoji: ':cat:',
+      },
+    },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

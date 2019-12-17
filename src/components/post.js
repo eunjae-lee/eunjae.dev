@@ -2,8 +2,15 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
-const tagWithClassName = (Tag, className) => ({ children, ...props }) => (
-  <Tag {...props} className={className}>
+const tagWithClassName = (Tag, className) => ({
+  children,
+  className: classNameFromMdx,
+  ...props
+}) => (
+  <Tag
+    {...props}
+    className={[className, classNameFromMdx].filter(Boolean).join(' ')}
+  >
     {children}
   </Tag>
 );
@@ -14,6 +21,8 @@ export default ({
     frontmatter: { title, description, date },
   },
 }) => {
+  const plainText = 'text-gray-800 font-light';
+
   return (
     <MDXProvider
       components={{
@@ -41,10 +50,7 @@ export default ({
           'h6',
           'text-gray-800 mt-12 mb-4 -ml-1 text-base font-semibold'
         ),
-        p: tagWithClassName(
-          'p',
-          'text-gray-800 leading-relaxed font-light mt-2 mb-4'
-        ),
+        p: tagWithClassName('p', `${plainText} leading-relaxed mt-2 mb-4`),
         a: tagWithClassName(
           'a',
           'text-blue-700 hover:text-blue-500 leading-relaxed font-medium mb-8'
@@ -55,9 +61,11 @@ export default ({
         ),
         ul: tagWithClassName('ul', 'list-disc m-4'),
         ol: tagWithClassName('ol', 'list-decimal m-4'),
-        li: tagWithClassName('li', 'text-gray-800 font-light my-1'),
+        li: tagWithClassName('li', `${plainText} my-1`),
         strong: tagWithClassName('strong', 'font-semibold'),
         em: tagWithClassName('em', 'italic'),
+        th: tagWithClassName('th', 'text-gray-800 text-base font-semibold'),
+        td: tagWithClassName('td', `${plainText}`),
       }}
     >
       <article className="post m-8 break-words md:mt-12 mb-16">
