@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, isPostContext, date }) {
   if (!title) {
     console.warn('`title` is missing in this page.');
   }
@@ -56,7 +56,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: isPostContext ? `article` : `website`,
+        },
+        {
+          property: `og:site_name`,
+          content: site.siteMetadata.author,
+        },
+        date && {
+          property: `article:published_time`,
+          content: date,
         },
         {
           name: `twitter:card`,
@@ -74,7 +82,9 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]
+        .filter(Boolean)
+        .concat(meta)}
     />
   );
 }

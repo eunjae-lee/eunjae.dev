@@ -65,6 +65,8 @@ function Layout(props) {
       <SEO
         title={frontmatter.title || title}
         description={frontmatter.description}
+        isPostContext={isPostContext}
+        date={frontmatter.date}
       />
       {isPostContext ? (
         <>
