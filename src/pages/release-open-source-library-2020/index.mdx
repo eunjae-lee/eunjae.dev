@@ -7,7 +7,7 @@ date: '2020-01-04T15:25:17.421Z'
 import Notice from '../../components/notice';
 import ActionLink from '../../components/actionLink';
 
-In this article, I'm going to talk about how to release open source library as I build up a little script to ease the process. After that, I will show you the pain points in that process. I will show you a new process which solves the problems. And finally, I will introduce a tool for it.
+In this article, I'm going to talk about how to release open source library as I build up a little script to ease the process. After that, I will show you the pain points in that process. I will show you a new process that solves the problems. And finally, I will introduce a tool for it.
 
 ## Table of Contents
 
@@ -45,9 +45,9 @@ There are two major branching strategies in terms of release.
 1. `master + release`
    - You commit to master or merge PRs to master.
    - master is a stable branch whenever you can release from.
-   - release is a snapshot of latest release.
+   - release is a snapshot of the latest release.
    - You might use `develop + master` or whatever.
-2. `master` **only**: Almost same with the above except that you don't maintain any snapshot branch for lastest release.
+2. `master` **only**: Almost the same with the above except that you don't maintain any snapshot branch for the latest release.
 
 Each strategy has pros and cons and you should choose what fits your needs. You can read a dedicated article [Branching Strategies](/branching-strategies) to learn more.
 
@@ -151,13 +151,13 @@ As you use the script above several times, you will face problems like the follo
 
 ### You make mistakes.
 
-- The new version which is semenatically bumped can be wrong if you wrote a wrong commit message before. However, you don't get a chance to fix it.
+- The new version which is semantically bumped can be wrong if you wrote a wrong commit message before. However, you don't get a chance to fix it.
 - `conventional-changelog` updates the changelog for you. However, you didn't get a chance to refine it.
-- You used a wrong version of one of your tools, leading to a different build result.
+- You used the wrong version of one of your tools, leading to a different build result.
 
 ### You are blocked.
 
-- You have e2e tests which takes 30 minutes, so you had to wait for the script to finish.
+- You have e2e tests which take 30 minutes, so you had to wait for the script to finish.
 - Or you completely forgot what you were doing and got back to it 3 hours later.
 - Or even worse, you couldn't do any more work on that repository until the release process got finished.
 
@@ -173,12 +173,12 @@ As you use the script above several times, you will face problems like the follo
 
 ## 3. How to Release Open Source Library in 2020
 
-Let's solve the problems. We need a better process. It consists of the three steps:
+Let's solve the problems. We need a better process. It consists of three steps:
 
 ### Step 1. Prepare a Pull Request
 
 - Figure out the next version (`x.y.z`).
-- Check out a staging branch like `releases/vx.y.z`.
+- Check out a staging branch, like `releases/vx.y.z`.
 - _Now in the staging branch,_
   - Bump the version.
   - Update the changelog.
@@ -244,11 +244,11 @@ You are almost not blocked at all.
 
 ### You no longer do it alone.
 
-Again, now you're not doing it alone any more. The PR can be reviewed by others. Since it's asynchronous, the review can happen slowly. There is no pressure. Everyone can take their time to review the changes in the PR. They can run some manual test based on the PR to make sure if everything is okay. Now the burden is shared.
+Again, now you're not doing it alone anymore. The PR can be reviewed by others. Since it's asynchronous, the review can happen slowly. There is no pressure. Everyone can take their time to review the changes in the PR. They can run some manual tests based on the PR to make sure if everything is okay. Now the burden is shared.
 
 ### You manage more than one project.
 
-This isn't solved yet. Instead of having a script in each repository, it will be better to have it as an external tool which adapts to many different projects with configuration.
+This isn't solved yet. Instead of having a script in each repository, it will be better to have it as an external tool that adapts to many different projects with configuration.
 
 ## 5. Introducing Ship.js
 
