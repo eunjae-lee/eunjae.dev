@@ -4,7 +4,7 @@ import IndexTemplate from '../components/index';
 export default IndexTemplate;
 
 export const query = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
@@ -12,7 +12,10 @@ export const query = graphql`
         description
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { lang: { ne: "ko" } } }
+    ) {
       edges {
         node {
           frontmatter {
