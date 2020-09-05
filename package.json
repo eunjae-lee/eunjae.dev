@@ -32,7 +32,7 @@
     "gatsby-source-filesystem": "^2.1.42",
     "gatsby-transformer-sharp": "^2.3.9",
     "hygen": "^5.0.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prism-themes": "^1.1.0",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
