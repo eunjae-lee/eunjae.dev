@@ -41,13 +41,13 @@ function HomePage() {
               <CardTitle className="flex items-center gap-2">
                 <Palette className="size-5 text-primary" /> Primary theme
               </CardTitle>
-              <CardDescription>Dark orange primary tokens across buttons, switches, and active states.</CardDescription>
+              <CardDescription>Theme tokens across buttons, switches, and active states.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <Alert variant="success">
                 <CheckCircle2 />
                 <AlertTitle>Theme tokens are live</AlertTitle>
-                <AlertDescription>Primary actions now use orange in both light and dark color schemes.</AlertDescription>
+                <AlertDescription>Primary actions follow the default Coss theme in both color schemes.</AlertDescription>
                 <AlertAction>
                   <Button size="sm">Primary action</Button>
                 </AlertAction>
@@ -74,7 +74,7 @@ function HomePage() {
               <div className="flex items-center justify-between rounded-lg border bg-muted/40 px-3 py-2">
                 <div>
                   <p className="text-sm font-medium">Live preview</p>
-                  <p className="text-xs text-muted-foreground">Switch thumb uses the orange primary color.</p>
+                  <p className="text-xs text-muted-foreground">Switch thumb uses the primary color token.</p>
                 </div>
                 <Switch defaultChecked aria-label="Toggle live preview" />
               </div>
