@@ -21,10 +21,19 @@ function RootComponent() {
   )
 }
 
+function ThemeScript() {
+  const code = `(() => {
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  document.documentElement.classList.toggle('dark', dark)
+})()`
+  return <script dangerouslySetInnerHTML={{ __html: code }} />
+}
+
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <ThemeScript />
         <HeadContent />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
