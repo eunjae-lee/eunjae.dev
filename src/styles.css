@@ -115,6 +115,17 @@
     * {
         border-color: var(--border);
     }
+
+    @media (prefers-color-scheme: dark) {
+        [data-slot="card"] {
+            background-clip: border-box !important;
+            border-color: var(--border);
+        }
+
+        [data-slot="card"]::before {
+            box-shadow: 0 -1px color-mix(in oklab, var(--color-white) 6%, transparent) !important;
+        }
+    }
 }
 
 :root {
