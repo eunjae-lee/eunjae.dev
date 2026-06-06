@@ -6,6 +6,12 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   base: '/',
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    allowedHosts: ['eunjaes-mac-mini-3.tail93e3.ts.net'],
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
