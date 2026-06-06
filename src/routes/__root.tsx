@@ -6,7 +6,7 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
       { title: 'eunjae.dev' },
     ],
   }),
@@ -21,19 +21,10 @@ function RootComponent() {
   )
 }
 
-function ThemeScript() {
-  const code = `(() => {
-  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  document.documentElement.classList.toggle('dark', dark)
-})()`
-  return <script dangerouslySetInnerHTML={{ __html: code }} />
-}
-
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <head>
-        <ThemeScript />
         <HeadContent />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
